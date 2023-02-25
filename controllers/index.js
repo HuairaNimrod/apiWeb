@@ -1,9 +1,9 @@
 const awesomeFunction =  (req, res, next)=>{
-    res.json('Awesome person');
+    res.json('Keyla Rosales');
 };
 
 const returnAnotherPerson =  (req, res, next)=>{
-    res.json('Super awesome person');
+    res.json('Aurora Reyna');
 };
 
 
