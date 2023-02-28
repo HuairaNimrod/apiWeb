@@ -1,8 +1,29 @@
-GET http://localhost:3000 HTTP/1.1
+# GET http://localhost:3000 HTTP/1.1
 
+# ###
+# GET http://localhost:3000/awesome HTTP/1.1
+
+# ###
+
+# GET https://apiweb-nimax.onrender.com HTTP/1.1
+
+
+// LOCALHOST
 ###
-GET http://localhost:3000/awesome HTTP/1.1
-
+GET http://localhost:8080/contacts
 ###
+GET http://localhost:8080/contacts/63fddfc0de17703a36b8d731
+###
+GET http://localhost:8080/contacts/63fde088de17703a36b8d738
+###
+GET http://localhost:8080/contacts/63fde08dde17703a36b8d739
 
-GET https://apiweb-nimax.onrender.com HTTP/1.1
+// PRODUCTION Deploy
+###
+GET https://cse341-instructor.herokuapp.com/contacts
+###
+GET https://cse341-instructor.herokuapp.com/contacts/622023f642f9ab4cd6e060b2
+###
+GET https://cse341-instructor.herokuapp.com/contacts/622023f642f9ab4cd6e060b3
+###
+GET https://cse341-instructor.herokuapp.com/contacts/622023f642f9ab4cd6e060b4
