@@ -1,3 +1,6 @@
+const mongodb = require('../db/connect');
+const ObjectId = require('mongodb').ObjectId;
+
 const awesomeFunction =  (req, res, next)=>{
     res.json('Keyla Rosales');
 };
@@ -5,10 +8,6 @@ const awesomeFunction =  (req, res, next)=>{
 const returnAnotherPerson =  (req, res, next)=>{
     res.json('Aurora Reyna');
 };
-
-
-const mongodb = require('../db/connect');
-const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res, next) => {
   const result = await mongodb.getDb().db().collection('contacts').find();
