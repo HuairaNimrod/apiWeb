@@ -20,10 +20,10 @@ GET http://localhost:8080/contacts/63fde08dde17703a36b8d739
 
 // PRODUCTION Deploy
 ###
-GET https://cse341-instructor.herokuapp.com/contacts
+GET https://apiweb-nimax.onrender.com/contacts
 ###
-GET https://cse341-instructor.herokuapp.com/contacts/622023f642f9ab4cd6e060b2
+GET https://apiweb-nimax.onrender.com/contacts/63fddfc0de17703a36b8d731
 ###
-GET https://cse341-instructor.herokuapp.com/contacts/622023f642f9ab4cd6e060b3
+GET https://apiweb-nimax.onrender.com/contacts/63fde088de17703a36b8d738
 ###
-GET https://cse341-instructor.herokuapp.com/contacts/622023f642f9ab4cd6e060b4
+GET https://apiweb-nimax.onrender.com/contacts/63fde08dde17703a36b8d739
