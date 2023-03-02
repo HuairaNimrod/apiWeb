@@ -5,10 +5,11 @@ const awesomeFunction =  (req, res, next)=>{
     res.json('Keyla Rosales');
 };
 
-const returnAnotherPerson =  (req, res)=>{
+const returnAnotherPerson =  (req, res)=>{  //req http request object (URL and headings) & rres HTTP response
     res.json('Aurora Reyna');
 };
 
+//GET
 const getAll = async (req, res) => {
   const result = await mongodb.getDb().db().collection('contacts').find();
   result.toArray().then((lists) => {
@@ -30,7 +31,7 @@ const getSingle = async (req, res) => {
   });
 };
 
-//post
+//POST
 
 const createContact = async (req, res) => {
   const contact = {
@@ -48,4 +49,28 @@ const createContact = async (req, res) => {
   }
 };
 
-module.exports = {getAll, getSingle, awesomeFunction, returnAnotherPerson, createContact };
+//PUT
+const updateContact = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  // be aware of updateOne if you only want to update specific fields
+  const contact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
+  };
+  const response = await mongodb
+    .getDb()
+    .db()
+    .collection('contacts')
+    .replaceOne({ _id: userId }, contact);
+  console.log(response);
+  if (response.modifiedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'Some error occurred while updating the contact.');
+  }
+};
+
+module.exports = {getAll, getSingle, awesomeFunction, returnAnotherPerson, createContact, updateContact };
