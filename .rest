@@ -18,6 +18,19 @@ GET http://localhost:8080/contacts/63fde088de17703a36b8d738
 ###
 GET http://localhost:8080/contacts/63fde08dde17703a36b8d739
 
+
+### Create contact 
+POST http://localhost:8080/contacts HTTP/1.1
+content-type: application/json
+
+{   
+    "firstName":"Abiud", 
+    "lastName":"Rosales", 
+    "email":"abi@test.com", 
+    "favoriteColor":"pink", 
+    "birthday":"06/19/2000"
+}
+
 // PRODUCTION Deploy
 ###
 GET https://apiweb-nimax.onrender.com/contacts
@@ -27,3 +40,10 @@ GET https://apiweb-nimax.onrender.com/contacts/63fddfc0de17703a36b8d731
 GET https://apiweb-nimax.onrender.com/contacts/63fde088de17703a36b8d738
 ###
 GET https://apiweb-nimax.onrender.com/contacts/63fde08dde17703a36b8d739
+
+
+
+
+
+
+

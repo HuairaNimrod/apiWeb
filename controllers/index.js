@@ -5,11 +5,11 @@ const awesomeFunction =  (req, res, next)=>{
     res.json('Keyla Rosales');
 };
 
-const returnAnotherPerson =  (req, res, next)=>{
+const returnAnotherPerson =  (req, res)=>{
     res.json('Aurora Reyna');
 };
 
-const getAll = async (req, res, next) => {
+const getAll = async (req, res) => {
   const result = await mongodb.getDb().db().collection('contacts').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -17,7 +17,7 @@ const getAll = async (req, res, next) => {
   });
 };
 
-const getSingle = async (req, res, next) => {
+const getSingle = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDb()
@@ -30,4 +30,22 @@ const getSingle = async (req, res, next) => {
   });
 };
 
-module.exports = {awesomeFunction, returnAnotherPerson, getAll, getSingle };
+//post
+
+const createContact = async (req, res) => {
+  const contact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
+  };
+  const response = await mongodb.getDb().db().collection('contacts').insertOne(contact);
+  if (response.acknowledged) {
+    res.status(201).json(response);
+  } else {
+    res.status(500).json(response.error || 'Some error occurred while creating the contact.');
+  }
+};
+
+module.exports = {getAll, getSingle, awesomeFunction, returnAnotherPerson, createContact };
