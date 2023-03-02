@@ -73,4 +73,22 @@ const updateContact = async (req, res) => {
   }
 };
 
-module.exports = {getAll, getSingle, awesomeFunction, returnAnotherPerson, createContact, updateContact };
+//DELETE
+
+const deleteContact = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  const result = await mongodb
+    .getDb()
+    .db()
+    .collection('contacts')
+    .deleteOne({ _id: userId }, true);
+  console.log(result);
+  if (result.deletedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(result.error || 'Some error occurred while deleting the contact.');
+  }
+
+};
+
+module.exports = {getAll, getSingle, awesomeFunction, returnAnotherPerson, createContact, updateContact, deleteContact };

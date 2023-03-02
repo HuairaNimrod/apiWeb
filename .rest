@@ -12,24 +12,19 @@
 //-------------------------------------------
 ###
 GET http://localhost:8080/contacts
-# ###
-# GET http://localhost:8080/contacts/63fddfc0de17703a36b8d731
-# ###
-# GET http://localhost:8080/contacts/63fde088de17703a36b8d738
 ###
-GET http://localhost:8080/contacts/6400147a7dddc6c77c2f6182
-
+GET http://localhost:8080/contacts/63fddfc0de17703a36b8d731
 
 ### Create contact 
 POST http://localhost:8080/contacts HTTP/1.1
 content-type: application/json
 
 {   
-    "firstName":"Abiud", 
+    "firstName":"Joel", 
     "lastName":"Rosales", 
     "email":"abi@test.com", 
-    "favoriteColor":"pink", 
-    "birthday":"06/19/2000"
+    "favoriteColor":"PINK", 
+    "birthday":"12/01/2000"
 }
 
 ### PUT contact 
@@ -41,8 +36,13 @@ content-type: application/json
     "lastName":"Rosales", 
     "email":"abi@test.com", 
     "favoriteColor":"GREEN", 
-    "birthday":"06/19/2000"
+    "birthday":"03/01/2000"
 }
+
+### DELETE contact
+DELETE http://localhost:8080/contacts/64000b4c7dddc6c77c2f617b HTTP/1.1
+
+
 
 
 
@@ -52,12 +52,37 @@ content-type: application/json
 //-------------------------------------------
 ###
 GET https://apiweb-nimax.onrender.com/contacts
-# ###
-# GET https://apiweb-nimax.onrender.com/contacts/63fddfc0de17703a36b8d731
-# ###
-# GET https://apiweb-nimax.onrender.com/contacts/63fde088de17703a36b8d738
-# ###
-# GET https://apiweb-nimax.onrender.com/contacts/63fde08dde17703a36b8d739
+###
+GET https://apiweb-nimax.onrender.com/contacts/63fddfc0de17703a36b8d731
+
+
+### Create contact 
+POST https://apiweb-nimax.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+{   
+    "firstName":"Joel", 
+    "lastName":"Rosales", 
+    "email":"abi@test.com", 
+    "favoriteColor":"PINK", 
+    "birthday":"12/01/2000"
+}
+
+### PUT contact 
+PUT https://apiweb-nimax.onrender.com/contacts/640010297dddc6c77c2f617d HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Abiud", 
+    "lastName":"Rosales", 
+    "email":"abi@test.com", 
+    "favoriteColor":"GREEN", 
+    "birthday":"03/01/2000"
+}
+
+### DELETE contact
+DELETE https://apiweb-nimax.onrender.com/contacts/64000b4c7dddc6c77c2f617b HTTP/1.1
+
 
 
 
