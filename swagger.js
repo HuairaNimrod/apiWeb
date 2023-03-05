@@ -5,7 +5,7 @@ const doc = {
     title: 'My API',
     description: 'Temple API'
   },
-  host: 'https://apiweb-nimax.onrender.com', // for local host 'localhost:8080'
+  host: '//apiweb-nimax.onrender.com', // for local host 'localhost:8080'
   schemes: ['https'] // localhost : http
 };
 
