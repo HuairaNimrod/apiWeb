@@ -5,7 +5,7 @@
     "description": "Temple API",
     "version": "1.0.0"
   },
-  "host": "https://apiweb-nimax.onrender.com",
+  "host": "apiweb-nimax.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
