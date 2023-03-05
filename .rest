@@ -69,7 +69,7 @@ content-type: application/json
 }
 
 ### PUT contact 
-PUT https://apiweb-nimax.onrender.com/contacts/640010297dddc6c77c2f617d HTTP/1.1
+PUT https://apiweb-nimax.onrender.com/contacts/64001fb0e5b41b8f3cd13efe HTTP/1.1
 content-type: application/json
 
 {
@@ -81,7 +81,7 @@ content-type: application/json
 }
 
 ### DELETE contact
-DELETE https://apiweb-nimax.onrender.com/contacts/64000b4c7dddc6c77c2f617b HTTP/1.1
+DELETE https://apiweb-nimax.onrender.com/contacts/64001fb0e5b41b8f3cd13efe HTTP/1.1
 
 
 
