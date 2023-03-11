@@ -1,18 +1,7 @@
-// var express = require('express');
-// var app = express();
-// const port = process.env.PORT || 3000
-// app.use('/', require('./routes'));
-
-// app.listen(port, ()=>{
-//     console.log(`Server is running on port ${port}`);
-// }); 
-
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
-
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8083;
 const app = express();
 
 app
@@ -22,6 +11,10 @@ app
     next();
   })
   .use('/', require('./routes'));
+
+  process.on('uncaughtException', (err, origin) => {
+    console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
+  });
 
 mongodb.initDb((err) => {
   if (err) {
